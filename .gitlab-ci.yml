@@ -1,0 +1,13 @@
+image: golang:1.10
+stages:
+    - test
+  
+before_script:
+    - go get -u github.com/julienschmidt/httprouter
+    - go get -u gitlab.com/bestmethod/go-logger
+    - cd /builds/bestmethod/go-log2rest
+
+test:
+    stage: test
+    script:
+        - go test
